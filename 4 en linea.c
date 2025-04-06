@@ -1,6 +1,4 @@
-/* Ivan Blanco 
-    V.31341450
-*/
+
 
 
 #include <stdio.h>
@@ -20,12 +18,12 @@ int empates = 0;
 void menuPrincipal() {// esta funcion es la que inicia el programa
     printf("\n\n\n\n\n");
     printf("\t\t\t\t\t|=========================================|\n");
-    printf("\t\t\t\t\t|      Bienvenido a Cuatro en LÌnea       |\n");
+    printf("\t\t\t\t\t|      Bienvenido a Cuatro en L√≠nea       |\n");
     printf("\t\t\t\t\t|=========================================|\n");
     printf("\t\t\t\t\t|1. Comenzar Juego                        |\n"); 						
     printf("\t\t\t\t\t|2. Salir                                 |\n");
     printf("\t\t\t\t\t|=========================================|\n\n");
-    printf("\t\t\t\t\tSeleccione una opciÛn: ");
+    printf("\t\t\t\t\tSeleccione una opci√≥n: ");
 }
 
 
@@ -35,32 +33,32 @@ void menuPrincipal() {// esta funcion es la que inicia el programa
 void Reglas() {//esto son las reglas del juego las cuales, luego de darle comenzar el juego se mostraran al usuario
 	system ("cls");
     printf("\n");
-    printf("=========================== Reglas del Juego: Cuatro en LÌnea ===========================\n");
+    printf("=========================== Reglas del Juego: Cuatro en L√≠nea ===========================\n");
     printf("\n");
     printf("1. Objetivo del Juego:\n");
     printf("   - El objetivo del juego es alinear cuatro fichas del mismo color en una fila,\n");
     printf("     columna o diagonal.\n");
     printf("\n");
-    printf("2. ConfiguraciÛn del Juego:\n");
+    printf("2. Configuraci√≥n del Juego:\n");
     printf("   - El juego se juega en un tablero de 6 filas y 7 columnas por defecto.\n");
-    printf("   - Los jugadores pueden elegir otros tamaÒos de tablero: 7x8 o 8x9.\n");
+    printf("   - Los jugadores pueden elegir otros tama√±os de tablero: 7x8 o 8x9.\n");
     printf("\n");
     printf("3. Modos de Juego:\n");
     printf("   - Jugador vs Jugador: Dos jugadores se turnan para colocar fichas.\n");
-    printf("   - Jugador vs M·quina: Un jugador juega contra la m·quina.\n");
-    printf("   - M·quina vs M·quina: Dos m·quinas juegan entre sÌ.\n");
+    printf("   - Jugador vs M√°quina: Un jugador juega contra la m√°quina.\n");
+    printf("   - M√°quina vs M√°quina: Dos m√°quinas juegan entre s√≠.\n");
     printf("\n");
     printf("4. Turnos:\n");
     printf("   - Los jugadores se turnan para colocar una ficha en una de las columnas del tablero.\n");
-    printf("   - La ficha caer· hasta la posiciÛn disponible m·s baja en la columna elegida.\n");
+    printf("   - La ficha caer√° hasta la posici√≥n disponible m√°s baja en la columna elegida.\n");
     printf("\n");
     printf("5. Ganar el Juego:\n");
     printf("   - Un jugador gana si logra alinear cuatro fichas del mismo color en una fila,\n");
     printf("     columna o diagonal.\n");
     printf("\n");
     printf("6. Empate:\n");
-    printf("   - El juego termina en empate si todas las casillas del tablero est·n llenas\n");
-    printf("     y ning˙n jugador ha logrado alinear cuatro fichas.\n");
+    printf("   - El juego termina en empate si todas las casillas del tablero est√°n llenas\n");
+    printf("     y ning√∫n jugador ha logrado alinear cuatro fichas.\n");
     printf("\n");
     printf("7. Lo mas importante: \n");
     printf("   - Divertirse!!!!!");
@@ -77,7 +75,7 @@ void iniciarTab(int tab[FILAS][COLS], int filas, int cols) {//esto es para inici
     int i, j;
     for (i = 0; i < filas; i++) {
         for (j = 0; j < cols; j++) {
-            tab[i][j] = 0; // 0 indica una casilla vacÌa
+            tab[i][j] = 0; // 0 indica una casilla vac√≠a
         }
     }
 }
@@ -86,7 +84,7 @@ void imprimirTab(int tab[FILAS][COLS], int filas, int cols, char jugador1[], cha
 	int i,j;
     printf("\n\t\t\t-[%s]- vs -[%s]-\n\n", jugador1, jugador2);
 
-    // Imprimir n˙meros de columnas
+    // Imprimir n√∫meros de columnas
     printf("\t   ");
     for ( j = 0; j < cols; j++) {
         printf("  %d   ", j + 1);
@@ -101,14 +99,14 @@ void imprimirTab(int tab[FILAS][COLS], int filas, int cols, char jugador1[], cha
     printf("\n");
 
     for ( i = 0; i < filas; i++) {
-        printf("\t%d |", i + 1); // N˙mero de fila
+        printf("\t%d |", i + 1); // N√∫mero de fila
         for ( j = 0; j < cols; j++) {
             if (tab[i][j] == 1) {
                 printf(" %s O %s |", color1, "\033[0m"); // Ficha del jugador 1
             } else if (tab[i][j] == 2) {
                              printf(" %s O %s |", color2, "\033[0m"); // Ficha del jugador 2
             } else {
-                printf("     |"); // Casilla vacÌa
+                printf("     |"); // Casilla vac√≠a
             }
         }
         printf("\n");
@@ -179,11 +177,11 @@ int verificarEmpate(int tab[FILAS][COLS], int filas, int cols) {// aqui el prgra
     for (i = 0; i < filas; i++) {
         for (j = 0; j < cols; j++) {
             if (tab[i][j] == 0) {
-                return 0; // A˙n hay casillas vacÌas, no hay empate
+                return 0; // A√∫n hay casillas vac√≠as, no hay empate
             }
         }
     }
-    return 1; // No hay casillas vacÌas, es un empate
+    return 1; // No hay casillas vac√≠as, es un empate
 }
 
 void seleccionarColor(char color[]) {//aqui utilice codigo ansii para poder ejecutar los colores en el programa
@@ -242,7 +240,7 @@ void seleccionarColor(char color[]) {//aqui utilice codigo ansii para poder ejec
 
 
 void mostrarEstadisticas(char jugador1[], char jugador2[]) {
-    printf("\n\t\t===== EstadÌsticas de Victorias =====\n");
+    printf("\n\t\t===== Estad√≠sticas de Victorias =====\n");
     printf("\t\t|%s: %d victorias\n", jugador1, victoriasJugador1);
     printf("\t\t|%s: %d victorias\n", jugador2, victoriasJugador2);
     printf("\t\t|Empates: %d\n", empates);
@@ -265,13 +263,13 @@ void jugadorVsJugador(int tab[FILAS][COLS], int filas, int cols, char jugador1[]
         do {
             printf("Elija una columna (1-%d): ", cols);
             scanf("%d", &col);
-            col--; // Ajustar para Ìndice del array
+            col--; // Ajustar para √≠ndice del array
             if (col < 0 || col >= cols || tab[0][col] != 0) {
-                printf("Columna no v·lida, Por favor, IntÈntalo de nuevo.\n");
+                printf("Columna no v√°lida, Por favor, Int√©ntalo de nuevo.\n");
             }
         } while (col < 0 || col >= cols || tab[0][col] != 0);
 
-        // Colocar ficha en la primera posiciÛn vacÌa de la columna
+        // Colocar ficha en la primera posici√≥n vac√≠a de la columna
         int fila = filas - 1;
         while (fila >= 0 && tab[fila][col] != 0) {
             fila--;
@@ -281,7 +279,7 @@ void jugadorVsJugador(int tab[FILAS][COLS], int filas, int cols, char jugador1[]
         // Verificar si un jugador ha conseguido la victoria
         if (verificarGanador(tab, filas, cols, turno)) {
             imprimirTab(tab, filas, cols, jugador1, jugador2, color1, color2);
-            printf("\n\t°%s ha ganado!\n", turno == 1 ? jugador1 : jugador2);
+            printf("\n\t¬°%s ha ganado!\n", turno == 1 ? jugador1 : jugador2);
             if (turno == 1) {
                 victoriasJugador1++;
             } else {
@@ -294,7 +292,7 @@ void jugadorVsJugador(int tab[FILAS][COLS], int filas, int cols, char jugador1[]
         // Verificar si los jugadores han conseguido un empate
         if (verificarEmpate(tab, filas, cols)) {
             imprimirTab(tab, filas, cols, jugador1, jugador2, color1, color2);
-            printf("\n\t°Es un empate!\n");
+            printf("\n\t¬°Es un empate!\n");
             empates++;
             mostrarEstadisticas(jugador1, jugador2);
             break;
@@ -313,7 +311,7 @@ void jugadorVsMaquina(int tab[FILAS][COLS], int filas, int cols, char jugador1[]
     int col;
 
     while (1) {
-        imprimirTab(tab, filas, cols, jugador1, "M·quina", color1, color2);
+        imprimirTab(tab, filas, cols, jugador1, "M√°quina", color1, color2);
         if (turno == 1) {
             printf("\nTurno de %s (1): ", jugador1);
             do {
@@ -321,7 +319,7 @@ void jugadorVsMaquina(int tab[FILAS][COLS], int filas, int cols, char jugador1[]
                 scanf("%d", &col);
                 col--; 
                 if (col < 0 || col >= cols || tab[0][col] != 0) {
-                    printf("Columna no v·lida, Por favor, IntÈntalo de nuevo.\n");
+                    printf("Columna no v√°lida, Por favor, Int√©ntalo de nuevo.\n");
                 }
             } while (col < 0 || col >= cols || tab[0][col] != 0);
         } else {
@@ -329,10 +327,10 @@ void jugadorVsMaquina(int tab[FILAS][COLS], int filas, int cols, char jugador1[]
             while (tab[0][col] != 0) {
                 col = rand() % cols;
             }
-            printf("\nTurno de la M·quina (2): Columna %d\n", col + 1);
+            printf("\nTurno de la M√°quina (2): Columna %d\n", col + 1);
         }
 
-        // Colocar ficha en la primera posiciÛn vacÌa de la columna
+        // Colocar ficha en la primera posici√≥n vac√≠a de la columna
         int fila = filas - 1;
         while (fila >= 0 && tab[fila][col] != 0) {
             fila--;
@@ -341,23 +339,23 @@ void jugadorVsMaquina(int tab[FILAS][COLS], int filas, int cols, char jugador1[]
 
         // Verificar si un jugador ha conseguido la victoria
         if (verificarGanador(tab, filas, cols, turno)) {
-            imprimirTab(tab, filas, cols, jugador1, "M·quina", color1, color2);
-            printf("\n\t°%s ha ganado!\n", turno == 1 ? jugador1 : "M·quina");
+            imprimirTab(tab, filas, cols, jugador1, "M√°quina", color1, color2);
+            printf("\n\t¬°%s ha ganado!\n", turno == 1 ? jugador1 : "M√°quina");
             if (turno == 1) {
                 victoriasJugador1++;
             } else {
                 victoriasMaquina++;
             }
-            mostrarEstadisticas(jugador1, "M·quina");
+            mostrarEstadisticas(jugador1, "M√°quina");
             break;
         }
 
         // // Verificar si los jugadores han conseguido un empate
         if (verificarEmpate(tab, filas, cols)) {
-            imprimirTab(tab, filas, cols, jugador1, "M·quina", color1, color2);
-            printf("\n\t°Es un empate!\n");
+            imprimirTab(tab, filas, cols, jugador1, "M√°quina", color1, color2);
+            printf("\n\t¬°Es un empate!\n");
             empates++;
-            mostrarEstadisticas(jugador1, "M·quina");
+            mostrarEstadisticas(jugador1, "M√°quina");
             break;
         }
 
@@ -373,14 +371,14 @@ void maquinaVsMaquina(int tab[FILAS][COLS], int filas, int cols, char color1[], 
     int col;
 
     while (1) {
-        imprimirTab(tab, filas, cols, "Peter (M·quina 1)", "Rodolfo (M·quina 2)", color1, color2);
+        imprimirTab(tab, filas, cols, "Peter (M√°quina 1)", "Rodolfo (M√°quina 2)", color1, color2);
         col = rand() % cols;
         while (tab[0][col] != 0) {
             col = rand() % cols;
         }
-        printf("\nTurno de la M·quina %d: Columna %d\n", turno, col + 1);
+        printf("\nTurno de la M√°quina %d: Columna %d\n", turno, col + 1);
 
-        // Colocar ficha en la primera posiciÛn vacÌa de la columna
+        // Colocar ficha en la primera posici√≥n vac√≠a de la columna
         int fila = filas - 1;
         while (fila >= 0 && tab[fila][col] != 0) {
             fila--;
@@ -389,23 +387,23 @@ void maquinaVsMaquina(int tab[FILAS][COLS], int filas, int cols, char color1[], 
 
         // Verificar si un jugador ha conseguido la victoria
         if (verificarGanador(tab, filas, cols, turno)) {
-            imprimirTab(tab, filas, cols, "Peter (M·quina 1)", "Rodolfo (M·quina 2)", color1, color2);
-            printf("\n\t°M·quina %d ha ganado!\n", turno);
+            imprimirTab(tab, filas, cols, "Peter (M√°quina 1)", "Rodolfo (M√°quina 2)", color1, color2);
+            printf("\n\t¬°M√°quina %d ha ganado!\n", turno);
             if (turno == 1) {
-                victoriasJugador1++; // Incrementa victorias para M·quina 1
+                victoriasJugador1++; // Incrementa victorias para M√°quina 1
             } else {
-                victoriasJugador2++; // Incrementa victorias para M·quina 2
+                victoriasJugador2++; // Incrementa victorias para M√°quina 2
             }
-            mostrarEstadisticas("Peter (M·quina 1)", "Rodolfo (M·quina 2)");
+            mostrarEstadisticas("Peter (M√°quina 1)", "Rodolfo (M√°quina 2)");
             break;
         }
 
         // Verificar si los jugadores han conseguido un empate
         if (verificarEmpate(tab, filas, cols)) {
-            imprimirTab(tab, filas, cols, "Peter (M·quina 1)", "Rodolfo (M·quina 2)", color1, color2);
-            printf("\n\t°Es un empate!\n");
+            imprimirTab(tab, filas, cols, "Peter (M√°quina 1)", "Rodolfo (M√°quina 2)", color1, color2);
+            printf("\n\t¬°Es un empate!\n");
             empates++;
-            mostrarEstadisticas("Peter (M·quina 1)", "Rodolfo (M·quina 2)");
+            mostrarEstadisticas("Peter (M√°quina 1)", "Rodolfo (M√°quina 2)");
             break;
         }
 
@@ -442,13 +440,13 @@ int main() {
 	system("cls");
     printf("\n\n\n\n\n");
     printf("\t\t\t\t\t|=========================================|\n");
-    printf("\t\t\t\t\t|      Seleccione el tamaÒo del tablero   |\n");
+    printf("\t\t\t\t\t|      Seleccione el tama√±o del tablero   |\n");
     printf("\t\t\t\t\t|=========================================|\n");
     printf("\t\t\t\t\t|1. 6 filas, 7 columnas (Tradicional)     |\n"); 						
     printf("\t\t\t\t\t|2. 7 filas, 8 columnas                   |\n");
     printf("\t\t\t\t\t|3. 8 filas, 9 columnas                   |\n");
     printf("\t\t\t\t\t|=========================================|\n\n");
-    printf("\t\t\t\t\t -Seleccione una opciÛn: ");
+    printf("\t\t\t\t\t -Seleccione una opci√≥n: ");
     scanf("%d", &opcion);
    
     system("cls");
@@ -467,7 +465,7 @@ int main() {
             cols = 9;
             break;
         default:
-            printf("\t\t\t*-OpciÛn no v·lida. Se seleccionar· el tamaÒo predeterminado.\n");
+            printf("\t\t\t*-Opci√≥n no v√°lida. Se seleccionar√° el tama√±o predeterminado.\n");
             filas = 6;
             cols = 7;
             break;
@@ -478,10 +476,10 @@ int main() {
     printf("\t\t\t\t\t|        Seleccione el modo de juego      |\n");
     printf("\t\t\t\t\t|=========================================|\n");
     printf("\t\t\t\t\t|1. Jugador vs Jugador                    |\n"); 						
-    printf("\t\t\t\t\t|2. Jugador vs M·quina                    |\n");
-    printf("\t\t\t\t\t|3. M·quina vs M·quina                    |\n");
+    printf("\t\t\t\t\t|2. Jugador vs M√°quina                    |\n");
+    printf("\t\t\t\t\t|3. M√°quina vs M√°quina                    |\n");
     printf("\t\t\t\t\t|=========================================|\n\n");
-    printf("\t\t\t\t\t -Seleccione una opciÛn: ");
+    printf("\t\t\t\t\t -Seleccione una opci√≥n: ");
     scanf("%d", &modo);
     system("cls");
 
@@ -497,7 +495,7 @@ int main() {
             system("cls");
             seleccionarColor(color2);
         } else {
-            strcpy(jugador2, "M·quina");
+            strcpy(jugador2, "M√°quina");
             seleccionarColor(color2);
         }
     }
@@ -522,15 +520,15 @@ int main() {
             maquinaVsMaquina(tab, filas, cols, color1, color2);
             break;
         default:-
-            printf("\t\t\t*-Modo no v·lido.\n");
+            printf("\t\t\t*-Modo no v√°lido.\n");
             break;
     }
 	
-    // OpciÛn para reiniciar el juego
+    // Opci√≥n para reiniciar el juego
     printf("\t\t*-Desean continuar la Partida? (Si/No): ");
     scanf("%s",&continuar);
 	}while (strcmpi(continuar,"si")==0);
-    printf("\t\t*-øDesean Volver al menu?  (Si/No): ");
+    printf("\t\t*-¬øDesean Volver al menu?  (Si/No): ");
     scanf("%s", &volmenu);
 	}while (strcmpi(volmenu,"si")==0);
 
