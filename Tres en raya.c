@@ -1,5 +1,3 @@
-	/*Ivan Blanco
-   	V31341350*/
 
 
 #include <stdio.h>
@@ -24,7 +22,7 @@ int main(int argc, char *argv[]) {
     printf("\t\t\t\t\t|1. Comenzar Juego                        |\n"); 						
     printf("\t\t\t\t\t|2. Salir                                 |\n");
     printf("\t\t\t\t\t|=========================================|\n\n");
-    printf("\t\t\t\t\tSeleccione una opción: ");
+    printf("\t\t\t\t\tSeleccione una opciÃ³n: ");
     scanf("%d",&opcionMenu);
     if (opcionMenu == 1) {
 	
@@ -36,12 +34,12 @@ int main(int argc, char *argv[]) {
     printf("   - El objetivo del juego es alinear 3 fichas (X /O )en una fila,\n");
     printf("     columna o diagonal.\n");
     printf("\n");
-    printf("2. Configuración del Juego:\n");
+    printf("2. ConfiguraciÃ³n del Juego:\n");
     printf("   - Se juega en un tablero de 3 filas y 3 columnas.\n");
     printf("\n");
     printf("3. Modos de Juego:\n");
     printf("   - Jugador vs Jugador: Dos jugadores se turnan para colocar fichas (X / O).\n");
-    printf("   - Jugador vs Máquina: Un jugador juega contra la máquina.\n");
+    printf("   - Jugador vs MÃ¡quina: Un jugador juega contra la mÃ¡quina.\n");
     printf("\n");
     printf("4. Turnos:\n");
     printf("   - Los jugadores se turnan para colocar una ficha en una de las columnas del tablero.\n");
@@ -52,8 +50,8 @@ int main(int argc, char *argv[]) {
     printf("     columna o diagonal.\n");
     printf("\n");
     printf("6. Empate:\n");
-    printf("   - El juego termina en empate si todas las casillas del tablero están llenas\n");
-    printf("     y ningún jugador ha logrado alinear Tres  fichas.\n");
+    printf("   - El juego termina en empate si todas las casillas del tablero estÃ¡n llenas\n");
+    printf("     y ningÃºn jugador ha logrado alinear Tres  fichas.\n");
     printf("\n");
     printf("7. Lo mas importante: \n");
     printf("   - Divertirse!!!!!");
@@ -73,10 +71,10 @@ int main(int argc, char *argv[]) {
 		    printf("\t\t\t\t\t|           Modalidad del juego           |\n");
 		    printf("\t\t\t\t\t|=========================================|\n");
 		    printf("\t\t\t\t\t|1. Jugador vs Jugador                    |\n"); 						
-		    printf("\t\t\t\t\t|2. Jugador vs máquina                    |\n");
+		    printf("\t\t\t\t\t|2. Jugador vs mÃ¡quina                    |\n");
 		    printf("\t\t\t\t\t|3. Cerrar el Juego                       |\n");
 		    printf("\t\t\t\t\t|=========================================|\n\n");
-		    printf("\t\t\t\t\tSeleccione una opción: ");
+		    printf("\t\t\t\t\tSeleccione una opciÃ³n: ");
 	        scanf("%d", &mod);
 	        if (mod != 1 && mod != 2 && mod !=3)
 			{printf("\n\n\t\t\t\t\t-Opcion no valida!, por favor intentelo de nuevo!\n\n");
@@ -101,7 +99,7 @@ int main(int argc, char *argv[]) {
 		    printf("\t\t\t\t\t|         Dificultad  del juego           |\n");
 		    printf("\t\t\t\t\t|=========================================|\n");
 		    printf("\t\t\t\t\t|1. -Dificultad Normal     (^_^)          |\n"); 						
-		    printf("\t\t\t\t\t|2. -Dificultad Difícil    (¬_¬)          |\n");
+		    printf("\t\t\t\t\t|2. -Dificultad DifÃ­cil    (Â¬_Â¬)          |\n");
 		    printf("\t\t\t\t\t|3. -Dificultad Definitiva (x_x)          |\n");
 		    printf("\t\t\t\t\t|=========================================|\n\n");
     
@@ -131,7 +129,7 @@ int main(int argc, char *argv[]) {
 
         while (1) {// este while hace que el cilo se repita hasta que se cumpla alguna condicion, ya sea victoria o empate,esto debido a que al tener 1 como condicional hace que siempre sea verdadero
 		
-            printf("\t\t\t\t\t\t-*[%s (X)] VS [%s (O)]*-\n\n\n\n", jug1, mod == 1 ? jug2 : "Máquina");/*esto hace que los jugadores se muestren en pantalla, el operador ternario
+            printf("\t\t\t\t\t\t-*[%s (X)] VS [%s (O)]*-\n\n\n\n", jug1, mod == 1 ? jug2 : "MÃ¡quina");/*esto hace que los jugadores se muestren en pantalla, el operador ternario
             																				    revisa si la condicion se cumple (mod==1) y si no automaticamente se colocara el nombre "maquina"   			*/
             for (k = 0; k < 3; k++) {//con este recorrido de for y prints se logra conseguir un tablero muy parecido al tres en raya
                 printf("\t\t\t\t\t\t\t");
@@ -157,9 +155,9 @@ int main(int argc, char *argv[]) {
                         fila--;//esto es para restale 1 a la variable, ya que cuando ingreso los respectivos numeros el programa no lo lee correctamente, esto creo que sucede ya que en lenguaje c el sistema empieza contar desde 0 
                         colu--;// y al por ejemplo colocar el numero 1 lo coloca en la posicion 2 de la matriz 
                         if (fila < 0 || fila >= 3 || colu < 0 || colu >= 3) {
-                            printf("\n\n\t\t\t\t\t\t-Posicion no válida. Por favor Inténtalo de nuevo.\n");
+                            printf("\n\n\t\t\t\t\t\t-Posicion no vÃ¡lida. Por favor IntÃ©ntalo de nuevo.\n");
                         } else if (tablero[fila][colu] != ' ') {
-                            printf("\n\n\t\t\t\t\t\t-Celda ya ocupada. Por favor Inténtalo de nuevo.\n");
+                            printf("\n\n\t\t\t\t\t\t-Celda ya ocupada. Por favor IntÃ©ntalo de nuevo.\n");
                         }
                     } while (fila < 0 || fila >= 3 || colu < 0 || colu >= 3 || tablero[fila][colu] != ' ');/*esto verifica si la celda colocada por el jugador se encuentra dentro de los limites de la matriz o si la celda ya esta ocupada
                     																						 de estarlo se ejecutara el while, dandole la opcion al jugador de arreglar su error*/
@@ -181,9 +179,9 @@ int main(int argc, char *argv[]) {
                             fila--;
                             colu--;
                             if (fila < 0 || fila >= 3 || colu < 0 || colu >= 3) {
-                                printf("\n\n\t\t\t\t\t\t-Posicion no válida. Por favor Inténtalo de nuevo.\n");
+                                printf("\n\n\t\t\t\t\t\t-Posicion no vÃ¡lida. Por favor IntÃ©ntalo de nuevo.\n");
                             } else if (tablero[fila][colu] != ' ') {
-                                printf("\n\t\t\t\t\t-Celda ya ocupada. Por favor Inténtalo de nuevo.\n");
+                                printf("\n\t\t\t\t\t-Celda ya ocupada. Por favor IntÃ©ntalo de nuevo.\n");
                             }
                         } while (fila < 0 || fila >= 3 || colu < 0 || colu >= 3 || tablero[fila][colu] != ' ');
                     } else {
@@ -304,7 +302,7 @@ if (tablero[0][2] == jugadoractual && tablero[1][1] == jugadoractual && tablero[
 
 if (ganar) {
 
- 	printf("\t\t\t\t\t\t-*[%s (X)] VS [%s (O)]*-\n\n\n\n", jug1, mod == 1 ? jug2 : "Máquina");
+ 	printf("\t\t\t\t\t\t-*[%s (X)] VS [%s (O)]*-\n\n\n\n", jug1, mod == 1 ? jug2 : "MÃ¡quina");
     for (k = 0; k < 3; k++) {
        	 printf("\t\t\t\t\t\t\t");//esto es para mostrar el tablero  luego de conseguir la condicion de victoria
         for (l = 0; l < 3; l++) {
@@ -314,7 +312,7 @@ if (ganar) {
         printf("\n");
         if (k < 2) printf("\t\t\t\t\t\t\t---|---|---\n");
     }
-    printf("\n\n\t\t\t\t\t\t¡Jugador %c gana!. Felicidades!!!\n", jugadoractual);
+    printf("\n\n\t\t\t\t\t\tÂ¡Jugador %c gana!. Felicidades!!!\n", jugadoractual);
     break;
 }
 
@@ -326,7 +324,7 @@ for (k = 0; k < 3; k++) {
     }
 }
 if (empate) {
-	printf("\t\t\t\t\t\t-*[%s (X)] VS [%s (O)]*-\n\n\n\n", jug1, mod == 1 ? jug2 : "Máquina");
+	printf("\t\t\t\t\t\t-*[%s (X)] VS [%s (O)]*-\n\n\n\n", jug1, mod == 1 ? jug2 : "MÃ¡quina");
     for (k = 0; k < 3; k++) {//esto es para mostrar el tablero cuando se san las condiciones del empate
         printf("\t\t\t\t\t\t\t");
         for (l = 0; l < 3; l++) {
@@ -336,7 +334,7 @@ if (empate) {
         printf("\n");
         if (k < 2) printf("\t\t\t\t\t\t\t---|---|---\n");
     }
-    printf("\n\n\t\t\t\t\t\t¡¡¡Es un empate!!!\n");
+    printf("\n\n\t\t\t\t\t\tÂ¡Â¡Â¡Es un empate!!!\n");
     break;
 }
 
@@ -358,7 +356,7 @@ scanf("%s",&menu);
 		system("cls");
 		
 		printf("\n\n\t\t-----Cerrando programa de Juego-----\n");
-		printf("\n\n\t\t-Hecho y elaborado por  -[Ivan Blanco]-\n");
+		
 		printf("\n\n\t\t-Muchas gracias por jugar!!!\n");
 
 return 0;
