@@ -1,4 +1,4 @@
-/* Ivan Blanco  					-La contraseña es el nombre de la mejor universidad del tachira y su año de fundacion-
+/* Ivan Blanco  					-La contraseÃ±a es el nombre de la mejor universidad del tachira y su aÃ±o de fundacion-
   V31341450 */
 
 #include <stdio.h>
@@ -30,7 +30,7 @@ void menuPrincipal() {// esta funcion es la que inicia el programa
     printf("\t\t\t\t\t|1. Comenzar Juego                        |\n"); 						
     printf("\t\t\t\t\t|2. Salir                                 |\n");
     printf("\t\t\t\t\t|=========================================|\n\n");
-    printf("\t\t\t\t\tSeleccione una opción: ");
+    printf("\t\t\t\t\tSeleccione una opciÃ³n: ");
 }
 
 void menuRol() {
@@ -42,7 +42,7 @@ void menuRol() {
     printf("\t\t\t\t\t|1. Administrador (debe ingresar primero) |\n"); 						
     printf("\t\t\t\t\t|2. Jugador                               |\n");
     printf("\t\t\t\t\t|=========================================|\n\n");
-    printf("\t\t\t\t\tSeleccione una opción: ");
+    printf("\t\t\t\t\tSeleccione una opciÃ³n: ");
 }
 
 void Reglas() {//esto son las reglas del juego las cuales, luego de que el usuario eliga la opcion de jugador, apareceran
@@ -55,14 +55,14 @@ void Reglas() {//esto son las reglas del juego las cuales, luego de que el usuar
     printf("   - Dichas palabras seras colocadas por un administrador y seran vistas abajo del tablero\n");
     printf("   - El tablero tendra letras aleatorias para confundir y retrasar al jugador\n");
     printf("\n");
-    printf("2. Configuración del Juego:\n");
+    printf("2. ConfiguraciÃ³n del Juego:\n");
     printf("   - Se juega en un tablero de 15 filas y 15 columnas.\n");
     printf("   - Debajo del tablero se mostraran las palabras a buscar.\n");
     printf("   - Las palabras cuentan de 4 a 15 letras.\n");
     printf("\n");
     printf("3. Modo de Juego:\n");
     printf("   - Se contaran con dos roles, Jugador y Administrador.\n");
-    printf("   - El administrador seleccionará las palabras deseadas.\n");
+    printf("   - El administrador seleccionarÃ¡ las palabras deseadas.\n");
     printf("   - El jugador las buscara en el tablero, al encontrarlas colocara la fila y columna,.\n");
      printf("     de la primera y ultima letra de cada palabra para determinar su posicion.\n");
     printf("\n");
@@ -101,9 +101,9 @@ void Menuadmin (){
     printf("\t\t\t\t\t|2. Corregir Palabra                      |\n");
     printf("\t\t\t\t\t|3. Eliminar Palabra                      |\n");
     printf("\t\t\t\t\t|4. Lista de Palabras                     |\n");
-    printf("\t\t\t\t\t|5. Regresar al Menú Principal            |\n");
+    printf("\t\t\t\t\t|5. Regresar al MenÃº Principal            |\n");
     printf("\t\t\t\t\t|=========================================|\n\n");
-    printf("\t\t\t\t\tSeleccione una opción: ");
+    printf("\t\t\t\t\tSeleccione una opciÃ³n: ");
 
 
 
@@ -119,7 +119,7 @@ void colocarpala() {
     char palabra[MAX_largo + 1];
 
     if (num_palabras >= MAX_PALABRAS) {
-        printf("Ya ha ingresado el máximo de palabras permitidas (%d).\n", MAX_PALABRAS);
+        printf("Ya ha ingresado el mÃ¡ximo de palabras permitidas (%d).\n", MAX_PALABRAS);
         return;
     }
 
@@ -144,14 +144,14 @@ void colocarpala() {
             continue;
         }
 
-        // Convertir a mayúsculas
+        // Convertir a mayÃºsculas
         for (j = 0; j < longitud; j++) {
             if (palabra[j] >= 'a' && palabra[j] <= 'z') {
                 palabra[j] = palabra[j] - 'a' + 'A';
             }
         }
 
-        // Verificar que la palabra no esté ya ingresada
+        // Verificar que la palabra no estÃ© ya ingresada
         int repetida = 0;
         for (j = 0; j < num_palabras; j++) {
             if (strcmp(palabras[j], palabra) == 0) {
@@ -162,7 +162,7 @@ void colocarpala() {
 
         if (repetida) {
             printf("La palabra ya ha sido ingresada previamente.\n");
-            i--; // Repetir esta iteración
+            i--; // Repetir esta iteraciÃ³n
             continue;
         }
 
@@ -186,12 +186,12 @@ void modifpala() {
         printf("\t\t -%d. [ %s ]\n", indicePalabra + 1, palabras[indicePalabra]);
     }
 
-    printf("\t\tIngrese el número de la palabra que desea corregir: ");
+    printf("\t\tIngrese el nÃºmero de la palabra que desea corregir: ");
     scanf("%d", &indicePalabra);
-    indicePalabra--; // Ajustar índice de la palabra
+    indicePalabra--; // Ajustar Ã­ndice de la palabra
 
     if (indicePalabra < 0 || indicePalabra >= num_palabras) {
-        printf("Número inválido.\n");
+        printf("NÃºmero invÃ¡lido.\n");
         return;
     }
 
@@ -205,14 +205,14 @@ void modifpala() {
         return;
     }
 
-    // Convertir a mayúsculas
+    // Convertir a mayÃºsculas
     for (j = 0; j < longitud; j++) {
         if (nueva_palabra[j] >= 'a' && nueva_palabra[j] <= 'z') {
             nueva_palabra[j] = nueva_palabra[j] - 'a' + 'A';
         }
     }
 
-    // Verificar que la nueva palabra no esté ya ingresada
+    // Verificar que la nueva palabra no estÃ© ya ingresada
     for (j = 0; j < num_palabras; j++) {
         if (strcmp(palabras[j], nueva_palabra) == 0) {
             printf("\t\tLa nueva palabra ya ha sido ingresada previamente.\n");
@@ -237,12 +237,12 @@ void quitarpala() {
         printf("\t\t -%d. [ %s ]\n", indicePalabra + 1, palabras[indicePalabra]);
     }
 
-    printf("\tIngrese el número de la palabra que desea eliminar: ");
+    printf("\tIngrese el nÃºmero de la palabra que desea eliminar: ");
     scanf("%d", &indicePalabra);
-    indicePalabra--; // Ajustar índice
+    indicePalabra--; // Ajustar Ã­ndice
 
     if (indicePalabra < 0 || indicePalabra >= num_palabras) {
-        printf("\tNúmero inválido.\n");
+        printf("\tNÃºmero invÃ¡lido.\n");
         return;
     }
 
@@ -302,7 +302,7 @@ void mostrarTablero() {
     int i, j;
 
 	
-    // Imprimir los números de las columnas
+    // Imprimir los nÃºmeros de las columnas
     printf("   ");
     printf("\t\t\t\t");
     printf("   ");
@@ -311,7 +311,7 @@ void mostrarTablero() {
     }
     printf("\n");
 
-    // Imprimir una línea de separación superior
+    // Imprimir una lÃ­nea de separaciÃ³n superior
     printf("\t\t\t\t");
     printf("   +");
     for (j = 0; j < COLS; j++) {
@@ -322,7 +322,7 @@ void mostrarTablero() {
 
     // Imprimir las filas de la sopa de letras
     for (i = 0; i < FILAS; i++) {
-        // Imprimir el número de la fila
+        // Imprimir el nÃºmero de la fila
         printf("\t\t\t\t%2d |", i + 1);
 
         // Imprimir las letras de la sopa
@@ -464,17 +464,17 @@ void Jugador() {
         }
 
         if (num_palabras == 0) {
-            printf("\t\t ¡Felicidades! Has encontrado todas las palabras!!\n");
-            printf("\t¿Quieres volver a jugar? Si / No: ");
+            printf("\t\t Â¡Felicidades! Has encontrado todas las palabras!!\n");
+            printf("\tÂ¿Quieres volver a jugar? Si / No: ");
             
             scanf(" %s", &seguir);
             
             if (strcmpi(seguir,"si")==0) {
-                return; // Volver al menú principal
+                return; // Volver al menÃº principal
             } else {
             system ("cls");
             printf("\n\n\t-Gracias por jugar Mi Sopa de Letras!!!\n\n\n");
-	        printf("\tBY: -[Ivan Blanco]-\n\n");
+	        
 	        printf("\tCerrando programa en: \n\n");
 	        printf("\t3...\n\n");
 	        printf("\t2...\n\n");
@@ -506,7 +506,7 @@ int main() {
                 if (opcionRol == 1) {
                 	do{
 					system("cls");
-                	printf("\n\n\t\t\t\t-[Por favor Ingrese La contraseña de Administrador]: ");
+                	printf("\n\n\t\t\t\t-[Por favor Ingrese La contraseÃ±a de Administrador]: ");
                 	scanf("%s", contra);
             
                 	if (strcmp(contra, "unet1974") == 0){
@@ -545,13 +545,13 @@ int main() {
                                 regresar = 1;
                                 break;
                             default:
-                                printf("\n\t\t-Opción inválida. Por favor Intente nuevamente.\n\n");
+                                printf("\n\t\t-OpciÃ³n invÃ¡lida. Por favor Intente nuevamente.\n\n");
 			                    printf("\t\t");
 			                    system("pause");
                         }
                     } while (opcionAdmin != 5);
                 }else {
-                	printf("\n\n\t\t\t\tContraseña no Valida Por favor Ingresela de nuevo\n\n");
+                	printf("\n\n\t\t\t\tContraseÃ±a no Valida Por favor Ingresela de nuevo\n\n");
                 	system ("pause");
 				}
           		  }while (strcmp(contra, "unet1974") != 0);
@@ -573,7 +573,7 @@ int main() {
 				}
                 } else {
                 	
-                    printf("\n\t\t-Opción inválida. Por favor Intente nuevamente.\n\n");
+                    printf("\n\t\t-OpciÃ³n invÃ¡lida. Por favor Intente nuevamente.\n\n");
                     printf("\t\t");
                     system("pause");
                 }
@@ -581,13 +581,13 @@ int main() {
         } else if (opcionMenu == 2) {
             system ("cls");
             printf("\n\n\t-Gracias por jugar Mi Sopa de Letras!!!\n\n\n");
-	        printf("\tBY: -[Ivan Blanco]-\n\n");
+	       
 	        printf("\tCerrando programa en: \n\n");
 	        printf("\t3...\n\n");
 	        printf("\t2...\n\n");
 	        printf("\t1...\n\n\n");
         } else {
-        	printf("\n\t\t-Opción inválida. Por favor Intente nuevamente.\n\n");
+        	printf("\n\t\t-OpciÃ³n invÃ¡lida. Por favor Intente nuevamente.\n\n");
                     printf("\t\t");
                     system("pause");
         }
