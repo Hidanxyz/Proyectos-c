@@ -537,7 +537,7 @@ int main() {
 
 }
         printf("\n\n\t-Gracias por jugar Mi Cuatro en LInea!!\n\n\n");
-        printf("\tBY: -[Ivan Blanco]-\n\n");
+      
         printf("\tCerrando programa en: \n\n");
         printf("\t3...\n\n");
         printf("\t2...\n\n");
