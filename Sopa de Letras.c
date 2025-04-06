@@ -1,5 +1,6 @@
-/* Ivan Blanco  					-La contraseña es el nombre de la mejor universidad del tachira y su año de fundacion-
-  V31341450 */
+					//-La contraseña es el nombre de la mejor universidad del tachira y su año de fundacion-
+					//unet1974
+
 
 #include <stdio.h>
 #include <stdlib.h>
